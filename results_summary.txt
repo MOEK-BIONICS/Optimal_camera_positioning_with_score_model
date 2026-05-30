@@ -1,0 +1,51 @@
+Score-Based LGCP Sensor Placement — Results Summary
+============================================================
+
+CONFIG
+  Grid:            40×50 at 2.0m/cell
+  Mall dimensions: 80.0m × 100.0m
+  Train windows:   80
+  Epochs:          30
+  Cameras (M):     5
+  DDIM samples K:  32
+
+SENSOR LOCATIONS
+  GP baseline:
+    Camera 1: (33.0, 17.0) m  angle=225°
+    Camera 2: (97.0, 25.0) m  angle=225°
+    Camera 3: (1.0, 17.0) m  angle=0°
+    Camera 4: (41.0, 9.0) m  angle=180°
+    Camera 5: (17.0, 65.0) m  angle=0°
+  Score model:
+    Camera 1: (63.0, 21.0) m  angle=356°
+    Camera 2: (41.0, 65.0) m  angle=225°
+    Camera 3: (1.0, 73.0) m  angle=0°
+    Camera 4: (93.3, 43.8) m  angle=8°
+    Camera 5: (25.0, 1.0) m  angle=45°
+
+METRICS
+
+  GP baseline:
+    nll                    29.65547
+    coverage_50            1.00000
+    coverage_80            1.00000
+    coverage_95            1.00000
+    vp_mc                  0.04714
+    vp_jensen              0.04714
+    jensen_gap_pct         0.00000
+    miss_rate              0.76419
+    void_prob_emp          0.04200
+
+  Score model:
+    nll                    244.17759
+    coverage_50            1.00000
+    coverage_80            1.00000
+    coverage_95            1.00000
+    vp_mc                  0.06328
+    vp_jensen              0.00000
+    jensen_gap_pct         100.00000
+    miss_rate              0.91816
+    void_prob_emp          0.02400
+
+JENSEN GAP ANALYSIS
+  Jensen approximation underestimates VP by 100.00% (absolute: 0.06328). Significant approximation error — score MC is preferred.
